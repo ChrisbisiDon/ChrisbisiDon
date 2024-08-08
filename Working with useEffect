@@ -1,0 +1,52 @@
+App.js
+
+import React, { useEffect, useState } from 'react';
+import './App.css';
+
+function App() {
+
+  const [first, changeFirst] = useState("In a Good mood!");
+  const [secondary, changeSecondary] = useState("Nice");
+
+   useEffect(() => {
+    console.log(`We are ${first} today!`);
+   }, [first]);
+
+   useEffect(() => {
+    console.log(`Its ${secondary} here!`);
+   }, [secondary]); 
+
+  return(
+    <>
+      <h1>Today i am {first}</h1>
+      <button onClick={() => {changeFirst("In a Happy mood")}}>Change Mood to Happy</button>
+      <button onClick={() => {changeFirst("In a Sad mood")}}>Change Mood to Sad</button>
+      <button onClick={() => {changeFirst("In a Frustrated mood")}}>Change Mood to Frustrated</button>
+
+      <button onClick={() => {changeSecondary("Awesome")}}>Change Day to Awesome</button>
+      <button onClick={() => {changeSecondary("Great")}}>Change Day to Great</button>
+    </>
+  )
+}
+
+export default App;
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from "./App";
+
+ 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const [importnatIem, second, third] = ["Book", "Pen", "Calculator", "Ruler"];
+
+console.log(importnatIem, second, third);
+ 
+root.render(
+  <>
+    <App authorized={false} />
+  </>,
+);
