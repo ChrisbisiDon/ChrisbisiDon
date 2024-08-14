@@ -1,0 +1,61 @@
+Function.test.js
+
+import { timesFour } from "./function";
+
+test("Multiples of four", () => {
+    expect( timesFour(4) ).toBe(16); 
+})
+
+App.test.js
+
+import { render } from "@testing-library/react";
+import App from "./App";
+
+test("Outputs the H1 Tag", () => {
+    const {getByText} = render(<App />);
+    const h1 = getByText(/Welcome to React Testing Library/);
+    expect(h1).toHaveTextContent("Welcome to React Testing Library");
+})
+
+checkbox.test.js
+
+import React from "react";
+import { Checkbox } from "./Checkbox";
+import { fireEvent, render } from "@testing-library/react"
+
+test("Checkbox Selection", () => {
+    const { getByLabelText } = render(<Checkbox />);
+    const checkbox = getByLabelText( /not checked/);
+    fireEvent.click(checkbox);
+    expect(checkbox.checked).toEqual(true);
+})
+
+Checkbox.js
+
+import React, {useReducer} from "react";
+
+export function Checkbox() {
+    const [checked, toggle] = useReducer(
+        (checked) => !checked,
+        false
+    );
+    return(
+        <>
+            <label htmlFor="checkbox">{checked ? "checked" : "not checked"}</label>
+            <input id="checkbox" type="checkbox" value={checked} onChange={toggle} />
+        </>
+    )
+}
+
+App.js
+
+import React, { useState, useEffect } from "react";
+import './App.css';
+
+function App() {
+    return (
+      <h1>Welcome to React Testing Library</h1>
+    );
+}
+
+export default App;
