@@ -1,0 +1,123 @@
+function.test.js
+
+import { timesFour } from "./function";
+
+test("Multiples of four", () => {
+    expect( timesFour(4) ).toBe(16); 
+})
+
+App.test.js
+
+import { render } from "@testing-library/react";
+import App from "./App";
+
+test("Outputs the H1 Tag", () => {
+    const {getByText} = render(<App />);
+    const h1 = getByText(/Welcome to React Testing Library/);
+    expect(h1).toHaveTextContent("Welcome to React Testing Library");
+})
+
+Checkbox.test.js
+
+import React from "react";
+import { Checkbox } from "./Checkbox";
+import { fireEvent, render } from "@testing-library/react"
+
+test("Checkbox Selection", () => {
+    const { getByLabelText } = render(<Checkbox />);
+    const checkbox = getByLabelText( /not checked/);
+    fireEvent.click(checkbox);
+    expect(checkbox.checked).toEqual(true);
+})
+
+Checkbox.js
+
+import React, {useReducer} from "react";
+
+export function Checkbox() {
+    const [checked, toggle] = useReducer(
+        (checked) => !checked,
+        false
+    );
+    return(
+        <>
+            <label htmlFor="checkbox">{checked ? "checked" : "not checked"}</label>
+            <input id="checkbox" type="checkbox" value={checked} onChange={toggle} />
+        </>
+    )
+}
+
+App.js
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Home, About, Products, Contact } from './pages';
+import './App.css';
+
+function App() {
+    return (
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    );
+}
+
+export default App;
+
+Pages.js
+
+import React from "react";
+
+export function Home() {
+    return(
+        <div>
+            <h1>[Company Website]</h1>
+        </div>
+    )
+}
+
+export function About() {
+    return(
+        <div>
+            <h1>[About]</h1>
+        </div>
+    )
+}
+
+export function Products() {
+    return(
+        <div>
+            <h1>[Products]</h1>
+        </div>
+    )
+}
+
+export function Contact() {
+    return(
+        <div>
+            <h1>[Contact]</h1>
+        </div>
+    )
+}
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+
+ 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+ 
+root.render(
+  <Router>
+    <App />
+  </Router>,
+);
