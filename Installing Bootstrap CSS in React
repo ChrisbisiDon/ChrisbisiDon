@@ -1,0 +1,163 @@
+Terminal:
+
+C:\Users\1012 G2\Desktop\react-ui>npm install react-bootstrap bootstrap
+
+added 19 packages, changed 1 package, and audited 1563 packages in 30s
+
+263 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Compiled successfully!
+
+You can now view react-ui in the browser.        
+
+  Local:            http://localhost:3000        
+  On Your Network:  http://192.168.56.1:3000     
+
+Note that the development build is not optimized.
+To create a production build, use npm run build. 
+
+You can now view react-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+To create a production build, use npm run build.
+
+
+Compiling...
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+Compiled successfully!
+
+You can now view react-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+Compiled successfully!
+
+You can now view react-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+Compiled successfully!
+
+You can now view react-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+Compiled successfully!
+
+You can now view react-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+App.js:
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BsCalendar2CheckFill} from "react-icons/bs";
+import { Button, Col, Container, Row, } from 'react-bootstrap';
+
+function App() {
+  return (
+    <div className="App">
+      <Container>
+        <Row>
+          <Col md={3}>
+            <h3>Hello, Bootstrap!</h3>
+          </Col>
+          <Col md={3}>
+            <h3>Hello, Bootstrap!</h3>
+          </Col>
+          <Col md={3}>
+            <h3>Hello, Bootstrap!</h3>
+          </Col>
+          <Col md={3}>
+            <h3>Hello, Bootstrap!</h3>
+          </Col>
+        </Row>
+      </Container>
+       <h1><BsCalendar2CheckFill />Appointments</h1>
+       <Button>Hello World!</Button>
+    </div>
+  );
+}
+
+export default App;
+
+Index.js:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
